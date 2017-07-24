@@ -8,29 +8,34 @@
         <script type="text/javascript">
      function onLoad()
              {
+                  var name1="abc";
+                  var pwd1="xyz";
+                  var n=localStorage.getItem("name");
+                  var p=localStorage.getItem("pwd");
+                   if(name1==n && pwd1==p)
+                  {
+                   window.location = 'home.html';
+                     
+                  }
+                 
                   document.addEventListener("deviceready", onDeviceReady, true);
+                  
+                 
              }
         function myFunction() {
-        	
-        	if (typeof(Storage) !== "undefined") {
+        	var name1="abc";
+                  var pwd1="xyz";
+        	if (typeof(Storage) !== "undefined") 
+          {
     
-   /* localStorage.setItem("name", "abc"); 
-    localStorage.setItem("pwd", "xyz"); 
-*/
-sessionStorage.setItem("name", "abc"); 
-    sessionStorage.setItem("pwd", "xyz"); 
- /* var name1= localStorage.getItem("name");
-  var pwd1= localStorage.getItem("pwd");*/
-    var name1= sessionStorage.getItem("name");
-  var pwd1= sessionStorage.getItem("pwd");
-
-
-  var name2=document.getElementById("uname").value;
-  var pwd2=document.getElementById("pwd").value;
+    var name2=document.getElementById("uname").value;
+    var pwd2=document.getElementById("pwd").value;
 
 if(name1==name2 && pwd1==pwd2 )
 { 
- window.location = 'home.html';
+  localStorage.setItem("name", name2); 
+    localStorage.setItem("pwd", pwd2);
+    window.location = 'home.html';
 }
 else if(name1!=name2)
 {
